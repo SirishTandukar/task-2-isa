@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website</title>
+    <link rel="stylesheet"
+  href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <style>
+        header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    padding: 30px 18%;
+    transition: .3s;
+  }
+  label.logo{ 
+    color: #F28400;
+    font-size: 50px;
+    padding: 0px;
+    margin-left: 350px;
+  }
+  .navlist{
+    font-size: small;
+    display: flex;
+  }
+  .navlist li{
+    position: relative;
+  }
+  .navlist a{
+    font-size: medium;
+    color: black;
+    font-weight: 500;
+    padding: 15px 37px;
+  }
+  .navlist a::after{
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #F2A540;
+    bottom: -3px;
+    left: 0;
+    transition: ease .40s;
+  
+  }
+  .navlist a:hover::after{
+    width: 100%;
+  }
+  section{
+    padding: 100px 18%;
+  }
+  .home{
+    min-height: 100vh;
+    height: 100%;
+    width: 100%;
+    background: url(bbbb.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    grid-gap: 4rem;
+  
+  }
+  .text-box{
+    color: black;
+    position: absolute;
+    bottom: 20%;
+  }
+  .text-box p{
+    font-size: 50px;
+    font-weight: 600;
+    margin-left: 50px;
+  }
+  .text-box h1{
+    font-size: 150px;
+    line-height: 10px;
+    margin-left: 50px;
+    color: transparent;
+    -webkit-text-stroke: 1px #0f0f0f;
+    background: url(ok.png);
+    -webkit-background-clip: text;
+    background-position: 0 0;
+    animation: back 20s linear infinite;
+ 
+  }
+  @keyframes back{
+    100%{
+      background-position: 2000px 0;
+    }
+  }
+  span{
+    color: #F2A540;
+    font-weight: 800;
+  }
+
+  .text-box h3{
+    font-size: 40px;
+    font-weight: 500;
+    margin-left: 50px;
+  }
+  .home-img{
+    max-width: 70%;
+    width: 440px;
+    height: auto;
+    margin-top: 140px;
+  }
+  .slidershow{
+    width: 700px;
+    height: 400px;
+    overflow: hidden;
+    
+
+  }
+  .middle{
+    position: absolute;
+    top: 60%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+  }
+  .navigation{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+  }
+  .search-box{
+    float: right;
+    display: flex;
+    margin: 10px 25px;
+  }
+  .tbox{
+    padding: 10px;
+    width: 250px;
+
+  }
+  .btn{
+    width: 50px;
+    background-color: #F28400;
+    border-radius: 0;
+  }
+  .bar{
+    width: 50px;
+    height: 10px;
+    border: 2px solid white;
+    margin: 6px;
+    cursor: pointer;
+    transition: 0.4s;
+  }
+  .bar:hover{
+    background: white;
+  }
+  input[name="r"]{
+    position: absolute;
+    visibility: hidden;
+  }
+.slides{
+width: 500%;
+height: 100%;
+display: flex;
+}
+.slide{
+  width: 20%;
+  transition: 0.6s;
+}
+#r1:checked ~ .s1{
+  margin-left: 0;
+}
+#r2:checked ~ .s1{
+  margin-left: -20%;
+}
+#r3:checked ~ .s1{
+  margin-left: -40%;
+}
+#r4:checked ~ .s1{
+  margin-left: -60%;
+}
+.about{
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+ 
+  grid-gap: 2rem;
+}
+.about-img img{
+  max-width: 100%;
+  width: 540px;
+  height: auto;
+
+}
+.about-text h2{
+  font-size: var(--h2-font);
+  font-weight: 500;
+  margin: 8px 0px 25px;
+  line-height: 2;
+
+}
+.about-text h3{
+  color: black;
+  font-size: 20px;
+  font-weight: 500;
+}
+.about-text p{
+  max-width: 550px;
+  font-size: var(--p-font);
+  color: var(--secound-color);
+  line-height: 38px;
+  margin-bottom: 45px;
+}
+.about .hero h2{
+  color: black;
+  line-height: 1.5;
+  text-align: justify;
+  
+}
+.about .hero h3{
+  font-size: 28px;
+  line-height: 1.5;
+  font-weight: 850;
+}
+.about .hero p{
+  font-size: 15px;
+  line-height: 1.5;
+  text-align: justify;
+  
+}
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700');
+
+.cover{
+  display: flex;
+  margin: 10px;
+  margin-left: 0px;
+  height: 400px;
+  width: 900px;
+  
+}
+.box{
+  width: 700px;
+  height: 350px;
+  margin: 10px;
+  margin-left: -120px;
+  box-shadow: -1px 0 10px #0000;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.box img{
+width: 400px;
+height: 400px;
+}
+.box1{
+  width: 700px;
+  height: 350px;
+  margin: 10px;
+}
+.box1 img{
+width: 400px;
+height: 400px;
+}
+.box2{
+  width: 700px;
+  height: 350px;
+  margin: 10px;
+}
+.box2 img{
+width: 400px;
+height: 400px;
+}
+
+.box h2{
+  line-height: 2;
+  font-weight: 600;
+  text-align: center;
+}
+.box1 h2{
+  line-height: 2;
+  font-weight: 600;
+  text-align: center;
+}
+.box2 h2{
+  line-height: 2;
+  font-weight: 600;
+  text-align: center;
+}
+.box p{
+  text-align: justify;
+  line-height: 1.5;
+}
+.box1 p{
+  text-align: justify;
+  line-height: 1.5;
+}
+.box2 p{
+  text-align: justify;
+  line-height: 1.5;
+}
+.service h2{
+  text-align: center;
+  font-size: 36px;
+  font-weight: 500;
+  color: #040404;
+  line-height: 2;
+}
+.contact{
+  position: relative;
+  min-height: 100vh;
+  padding: 50px 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+.contact .content{
+  max-width: 800px;
+  text-align: center;
+}
+
+.contact .content h2{
+  font-size: 36px;
+  font-weight: 500;
+  color: black;
+  line-height: 2.5;
+
+}
+
+.container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.container .contactInfo{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+ .container .contactInfo .boxs{
+position: relative;
+padding: 20px 0;
+display: flex;
+ }
+ .container .contactInfo .boxs .icon{
+  min-width: 60px;
+  height: 60px;
+  background: #FF6701;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 22px;
+ }
+ .container .contactInfo .boxs .text{
+  display: flex;
+  margin-left: 20px;
+  font-size: 16px;
+  color:black;
+  flex-direction: column;
+  font-weight: 300;
+ }
+ .container .contactInfo .boxs .text h3{
+  font-weight: 500;
+  color: #FF6701;
+ }
+ .contactForm{
+  width: 40%;
+  padding: 40px;
+  background: #F2A540;
+ }
+ .contactForm h2{
+  font-size: 30px;
+  color: #FF6701;
+  font-weight: 700;
+  line-height: 2;
+ }
+ .contactForm .inputBox{
+  position: relative;
+  width: 100%;
+  margin-top: 10px;
+ }
+ .contactForm .inputBox input,
+ .contactForm .inputBox textarea{
+  width: 100%;
+  padding: 5px 0;
+  font-size: 16px;
+  margin: 10px 0;
+  border: none;
+  border-bottom: 2px solid orange;
+  outline: none;
+  resize: none;
+ }
+ .contactForm .inputBox input[type="submit"]{
+  width: 100px;
+  background: white;
+  color: black;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 16px;
+ }
+ .inputBox input[type="submit"]:hover {
+  background-color: #FF6701;
+  color:white;
+}
+
+
+ .social a{
+  width: 35px;
+  height: 35px;
+  border-radius: 40%;
+  display: inline-flex;
+  align-items: center;
+  background: rbga(128,103,240,1);
+  font-size: 30px;
+  color: #FFAE43;
+  margin-right: 22px;
+  margin-bottom: 30px;
+
+}
+.social a:hover{
+  transform: scale(1.3);
+  background: white;
+  transition: .5s;
+}
+
+.footer{
+  background: black;
+  height: auto;
+  width: 100vw;
+  font-family: sans-serif;
+  padding-top: 10px;
+  color: white;
+}
+.footer-content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+.footer-content h3{
+ font-size: 1.8rem;
+ font-weight: 400;
+ text-transform: capitalize;
+ line-height: 3rem;
+
+}
+.footer-content p{
+  max-width: 500px;
+  margin: 10px auto;
+  line-height: 28px;
+  font-size: 14px;
+}
+.social{
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0 3rem 0;
+
+}
+.footer-bottom{
+  
+  width: 100vw;
+  padding: 20px 0;
+  text-align: center;
+}
+.footer-bottom p{
+  font-size: 14px;
+  word-spacing: 2px;
+  text-transform: capitalize;
+
+}
+ 
+    </style>
+</head>
+<body>
+    <header> 
+        <div>
+        <label class="logo">Naruto</label>
+    </div>
+        
+        <ul class="navlist">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#series">Series</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="search-box">
+          <input type="text" class="tbox" placeholder="Search.."/>
+          <button class="btn"><i class='bx bx-search-alt-2'></i></button>
+        </div>
+      </header>
+      <!--home-->
+      <section class="home" id="home">
+        <div class="text-box">
+          <p> <span> The child of </span> </p>
+          <h1> Prophecy</h1>
+          <h3> Naruto <span>Uzumaki </span></h3>
+
+        </div>
+         
+  
+       <div class="slidershow middle">
+        <div class="slides">
+          <input type="radio" name="r" id="r1">
+          <input type="radio" name="r" id="r2">
+          <input type="radio" name="r" id="r3">
+          <input type="radio" name="r" id="r4">
+          <div class="slide s1 ">
+            <img src="naru.jpg" alt="jennie">
+          </div>
+          <div class="slide">
+            <img src="1.jpg" alt="Naruto">
+          </div>
+          <div class="slide">
+            <img src="2.jpg" alt="n">
+          </div>
+          <div class="slide">
+            <img src="4.jpg" alt="n">
+          </div>
+
+        </div>
+        <div class="navigation">
+          <label for="r1" class="bar"></label>
+          <label for="r2" class="bar"></label>
+          <label for="r3" class="bar"></label>
+          <label for="r4" class="bar"></label>
+        </div>
+       </div>
+        
+     </section>
+    <!-- about-->
+    <section class="about" id="about">
+  
+      <div class="about-img">
+        <img src="1.jpg">
+      </div>
+      <div class="hero">
+        <h3> Naruto Uzumaki (<span>Sage of</span> nine tales) </h3>
+        <br>
+        <h2> “Hard work is worthless for those that don't believe in themselves.” </h2>
+        <br>
+        <p> Naruto is a young orphan boy of 12 years with blond, spiky hair and blue eyes, Naruto Uzumaki graduates as a ninja from Konohagakure while bonding with his teacher Iruka Umino. Naruto seeks attention as he was ridiculed during his childhood. To be accepted and respected, he resolves to become Konohagakure's Hokage and surpass all previous leaders, no matter the difficulties. While becoming a ninja, Naruto forms friendships that he initially lacked, linking some of them to family relationships. Although Naruto sometimes finds himself unable to accomplish the tasks he proposes to do, other characters believe that he will be an excellent Hokage because of his positive impact on their lives. As an adult, Naruto claims that the Konohagakure village became his family due to his job of being the new Hokage, something he learned from the Third Hokage Hiruzen Sarutobi. As a result, he initially suffered a poor relationship with his son, Boruto, due to the little time he spends with his bloodline family.   </p>
+        
+      </div>
+      </section>
+      
+      <!--service-->
+      <section class="Naruto Series" id="series">
+        <h2> Naruto Series</h2>
+        <div class="cover">
+          <div class="box">
+            <img src="2.jpg">
+            <h2>Naruto</h2>
+            <p>Naruto is a Japanese manga series written and illustrated by Masashi Kishimoto. It tells the story of Naruto Uzumaki, a young ninja who seeks recognition from his peers and dreams of becoming the Hokage, the leader of his village.</p>
+          </div>
+          <div class="box1">
+            <img src="3.jpg">
+            <h2>Naruto Shippuden</h2>
+            <p>Naruto Shippuden is an anime series mainly adapted from Part II of Masashi Kishimoto's original manga series, with exactly 500 episodes. It is set two and a half years after the original series in the Naruto universe, following the ninja teenager Naruto Uzumaki and his allies.</p>
+          </div>
+          <div class="box2">
+            <img src="4.jpg">
+            <h2>Boruto</h2>
+            <p>Son of Naruto Uzumaki, Boruto, follows his father's footsteps along with his friends to become great ninja. Throughout all their adventures, Boruto is determined to make his mark in the ninja world and live outside of his father's shadow. Naruto was a young shinobi with an incorrigible knack for mischief.</p>
+          </div>
+        </div>
+        <br>
+
+      </section>
+      <section class="contact" id="contact">
+        <div class="content">
+          <h2>Contact Kishimoto</h2>
+          
+        </div>
+        <div class="container">
+          <div class="contactInfo">
+            <div class="boxs">
+              <div class="icon"><i class='bx bx-map' ></i></div>
+              <div class="text">
+                <h3> Address</h3>
+                <p> Nagi, Okayama Prefecture, Japan</p>
+              </div>
+            </div>
+            <div class="boxs">
+              <div class="icon"><i class='bx bx-phone' ></i></i></div>
+              <div class="text">
+                <h3> Phone</h3>
+                <p>03-3856-5790</p>
+              </div>
+              
+            </div>
+            <div class="boxs">
+              <div class="icon"><i class='bx bx-envelope' ></i></div>
+              <div class="text">
+                <h3>E-mail</h3>
+                <p> kishimoto.mashashi@gmail.com</p>
+              </div>
+              
+            </div>
+          </div>
+          
+           <div class="contactForm">
+            <form>
+              <h2> Send Message</h2>
+              <div class="inputBox">
+                <h3> Full Name</h3>
+                <input type="text" name="" required="required">
+                
+              </div>
+              <div class="inputBox">
+                <h3> Email</h3>
+                <input type="text" name="" required="required">
+                
+                <br>
+                
+              </div>
+              <div class="inputBox">
+                <h3>Type you message</h3>
+                <textarea required="required" ></textarea>
+                
+              </div>
+              <div class="inputBox">
+                <input type="submit" name="" value="send">
+              </div>
+              
+            </form>
+          </div>
+        </div>
+    
+        
+        
+    
+      </section>
+      <footer>
+        <div class="footer-content">
+          <h3>Naruto </h3>
+          <p> The world of ninja and vast jutsus. </p>
+        </div>
+        <div class="social">
+          
+          <a href="https://www.facebook.com/MasashiKishimotoManga/"><i class='bx bxl-facebook-square'></i></a> 
+          <a href="https://www.instagram.com/masasikishi/?hl=en"><i class='bx bxl-instagram-alt' ></i></a> 
+          <a href="https://uk.linkedin.com/in/masashi-kishimoto-0a82aa52?original_referer=https%3A%2F%2Fwww.google.com%2F"><i class='bx bxl-linkedin-square' ></i></a> 
+        </div>
+        <div class="footer-bottom">
+          <p>Copyright and copy; 2023 NARUTO. Desgined by Sirish Tandukar.</p>
+        </div>
+      </footer>
+
+</body>
+</html>
